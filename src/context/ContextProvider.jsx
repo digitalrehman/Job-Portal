@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { jobListings } from "../assets";
 
 export let ContextProvider = createContext();
 
@@ -7,10 +8,17 @@ let ContextAPI = ({ children }) => {
     jobTitle: "",
     location: "",
   });
-  let [isSearch, setIsSearch] = useState(false);
+  let [isSearch, setIsSearch] = useState(false);  
+  let [jobList, setJobList] = useState([]);
+ async function fetchJobList() {
+  setJobList(jobListings)
+ }
+ useEffect(() => {
+  fetchJobList();
+ }, []);
   return (
     <ContextProvider.Provider
-      value={{ searchFilter, setSearchFilter, isSearch, setIsSearch }}
+      value={{ searchFilter, setSearchFilter, isSearch, setIsSearch, jobList, setJobList }}
     >
       {children}
     </ContextProvider.Provider>

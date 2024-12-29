@@ -13,8 +13,8 @@ const Navbar = () => {
       {user ? (
         <div className="flex items-center gap-5">
           <Link className="text-blue-500 hover:text-blue-600 transition-all duration-300 font-semibold" to="/applications">Applied Jobs</Link>
-            <div className=" font-semibold flex items-center gap-2">
-              Hello, {user.firstName}
+            <div className=" font-semibold flex items-center gap-3">
+              <span className="hidden lg:block">Hello, {user.firstName}</span>
           <UserButton />
             </div>
         </div>

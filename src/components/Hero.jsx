@@ -16,8 +16,8 @@ const Hero = () => {
     setIsSearch(true);
   };
   return (
-    <div className="flex md:justify-around justify-center items-center w-full h-[90vh] md:flex-row flex-col-reverse     ">
-      <div className="md:w-1/3 sm:w-1/2 w-[80%] mt-10 md:mt-0 md:mx-0 mx-auto">
+    <div className="flex md:justify-around justify-center items-center w-full md:h-[90vh] h-screen md:flex-row flex-col-reverse     ">
+      <div className="xl:w-[40%] md:w-1/2 w-full px-5 mt-10 md:mx-0 mx-auto">
         <h1 className="text-2xl md:text-4xl font-bold text-gray-800">
           Find a job that aligns with your interests and skills
         </h1>
@@ -52,7 +52,7 @@ const Hero = () => {
           job title, location, or both.
         </p>
       </div>
-      <img src={images.background} alt="background" className="w-1/3" />
+      <img src={images.background} alt="background" className="w-1/3 " />
     </div>
   );
 };
