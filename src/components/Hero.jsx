@@ -4,17 +4,22 @@ import { MapPin, Search } from "lucide-react";
 import { ContextProvider } from "../context/ContextProvider";
 
 const Hero = () => {
-  let { setSearchFilter, setIsSearch, searchFilter } = useContext(ContextProvider);
+  let { setSearchFilter, setIsSearch } = useContext(ContextProvider);
   let searchTitle = useRef(null);
   let searchLocation = useRef(null);
-  let handleSearch = (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
+    if (!searchTitle.current.value.trim() && !searchLocation.current.value.trim()) {
+      alert("Please enter a job title or location.");
+      return;
+    }
     setSearchFilter({
-      jobTitle: searchTitle.current.value,
-      location: searchLocation.current.value,
+      jobTitle: searchTitle.current.value.trim(),
+      location: searchLocation.current.value.trim(),
     });
     setIsSearch(true);
   };
+  
   return (
     <div className="flex md:justify-around justify-center items-center w-full md:h-[90vh] h-screen md:flex-row flex-col-reverse     ">
       <div className="xl:w-[40%] md:w-1/2 w-full px-5 mt-10 md:mx-0 mx-auto">
@@ -30,7 +35,7 @@ const Hero = () => {
             <input
               type="text"
               placeholder="Job Title"
-              className="w-1/2 p-2 outline-none"
+              className="p-2 w-full outline-none"
               ref={searchTitle}
             />
           </div>
@@ -43,7 +48,7 @@ const Hero = () => {
               ref={searchLocation}
             />
           </div>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-md">
+          <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-md">
             Search
           </button>
         </form>

@@ -50,7 +50,7 @@ let jobCategories = [
     "Web Development",
 ];
 let jobLocations = [
-    "karachi  ",
+    "karachi",
     "lahore",
     "islamabad",
     "peshawar",
@@ -62,8 +62,8 @@ let jobListings = [
     {
         _id: '1',
         title: "Software Developer",
-        location: "Karachi",
-        level: "Mid Level",
+        location: "karachi",
+        level: "Entry Level",
         category: "Software Development",
         companyId: {
             "_id": "1",
@@ -92,7 +92,7 @@ let jobListings = [
     {
         _id: '2',
         title: "Software Developer",
-        location: "Lahore",
+        location: "lahore",
         level: "Internship",
         category: "Software Engineer",
         companyId: {
@@ -122,7 +122,7 @@ let jobListings = [
     {
         _id: '3',
         title: "Data Scientist",
-        location: "Lahore",
+        location: "lahore",
         level: "Senior",
         category: "Data Science",
         companyId: {
@@ -152,7 +152,7 @@ let jobListings = [
     {
         _id: '4',
         title: "Product Manager",
-        location: "Islamabad",
+        location: "islamabad",
         level: "Entry Level",
         category: "Product Management",
         companyId: {
@@ -182,10 +182,10 @@ let jobListings = [
     {
         _id: '5',
         title: "Marketing Manager",
-        location: "Karachi",
+        location: "karachi",
         level: "Mid Level",
         category: "Marketing",
-        companyId: {    
+        companyId: {
             "_id": "5",
             "name": "Softech",
             "email": "softech@gmail.com",
@@ -208,10 +208,10 @@ let jobListings = [
         `,
         salary: 100000,
         date: 1729681667114,
-    },{
-        _id: '6',   
+    }, {
+        _id: '6',
         title: "Sales Manager",
-        location: "Karachi",
+        location: "peshawar",
         level: "Mid Level",
         category: "Sales",
         companyId: {
@@ -237,11 +237,11 @@ let jobListings = [
         `,
         salary: 100000,
         date: 1729681667114,
-    },{
+    }, {
         _id: '7',
         title: "Project Manager",
-        location: "Karachi",
-        level: "Mid Level",
+        location: "faisalabad",
+        level: "Junior",
         category: "Project Management",
         companyId: {
             "_id": "7",
@@ -266,10 +266,10 @@ let jobListings = [
         `,
         salary: 100000,
         date: 1729681667114,
-    },{
+    }, {
         _id: '8',
         title: "Research and Development",
-        location: "Karachi",
+        location: "multan",
         level: "Mid Level",
         category: "Research and Development",
         companyId: {
@@ -295,11 +295,11 @@ let jobListings = [
         `,
         salary: 100000,
         date: 1729681667114,
-    },{
+    }, {
         _id: '9',
         title: "Training and Development",
-        location: "Karachi",
-        level: "Mid Level",
+        location: "quetta",
+        level: "Senior",
         category: "Training and Development",
         companyId: {
             "_id": "9",
@@ -324,13 +324,13 @@ let jobListings = [
         `,
         salary: 100000,
         date: 1729681667114,
-    },{
+    }, {
         _id: '10',
         title: "Web Developer",
         location: "Karachi",
-        level: "Mid Level",
+        level: "Entry Level",
         category: "Web Development",
-        companyId: {    
+        companyId: {
             "_id": "10",
             "name": "Softech",
             "email": "softech@gmail.com",
@@ -480,7 +480,7 @@ let jobListings = [
         location: "Karachi",
         level: "Mid Level",
         category: "Marketing",
-        companyId: {    
+        companyId: {
             "_id": "5",
             "name": "Softech",
             "email": "softech@gmail.com",
@@ -503,11 +503,11 @@ let jobListings = [
         `,
         salary: 100000,
         date: 1729681667114,
-    },{
-        _id: '6',   
+    }, {
+        _id: '6',
         title: "Sales Manager",
-        location: "Karachi",
-        level: "Mid Level",
+        location: "faisalabad",
+        level: "Junior",
         category: "Sales",
         companyId: {
             "_id": "6",
@@ -532,7 +532,7 @@ let jobListings = [
         `,
         salary: 100000,
         date: 1729681667114,
-    },{
+    }, {
         _id: '7',
         title: "Project Manager",
         location: "Karachi",
@@ -561,7 +561,7 @@ let jobListings = [
         `,
         salary: 100000,
         date: 1729681667114,
-    },{
+    }, {
         _id: '8',
         title: "Research and Development",
         location: "Karachi",
@@ -590,7 +590,7 @@ let jobListings = [
         `,
         salary: 100000,
         date: 1729681667114,
-    },{
+    }, {
         _id: '9',
         title: "Training and Development",
         location: "Karachi",
@@ -619,13 +619,13 @@ let jobListings = [
         `,
         salary: 100000,
         date: 1729681667114,
-    },{
+    }, {
         _id: '10',
         title: "Web Developer",
         location: "Karachi",
-        level: "Mid Level",
+        level: "Entry Level",
         category: "Web Development",
-        companyId: {    
+        companyId: {
             "_id": "10",
             "name": "Softech",
             "email": "softech@gmail.com",

@@ -3,7 +3,7 @@ import { images } from "../assets";
 
 const JobCard = ({ job }) => {
   return (
-    <div className="border p-6 shadow rounded">
+    <div className="border p-6 shadow rounded hover:shadow-lg transition-all duration-300 transform hover:scale-105">
       <div className="flex justify-between items-center">
         <img src={images.job1} alt="job" className="h-8" />
       </div>

@@ -8,14 +8,15 @@ let ContextAPI = ({ children }) => {
     jobTitle: "",
     location: "",
   });
+  let [isLoading, setIsLoading] = useState(true);
   let [isSearch, setIsSearch] = useState(false);  
   let [jobList, setJobList] = useState([]);
+  useEffect(() => {
+   fetchJobList();
+  }, []);
  async function fetchJobList() {
   setJobList(jobListings)
  }
- useEffect(() => {
-  fetchJobList();
- }, []);
   return (
     <ContextProvider.Provider
       value={{ searchFilter, setSearchFilter, isSearch, setIsSearch, jobList, setJobList }}
