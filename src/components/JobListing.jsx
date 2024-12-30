@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ContextProvider } from "../context/ContextProvider";
-import { ChevronLeft, ChevronRight, ChevronUp, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronUp, Loader2, X } from "lucide-react";
 import { jobCategories, jobListings, jobLocations } from "../assets";
 import JobCard from "./JobCard";
 
 const JobListing = () => {
-  let { searchFilter, setSearchFilter, isSearch, jobList } =
+  let { searchFilter, setSearchFilter, isSearch, jobList, isLoading } =
     useContext(ContextProvider);
   let [showFilter, setShowFilter] = useState(false);
   let [currentPage, setCurrentPage] = useState(1);
@@ -33,15 +33,15 @@ const JobListing = () => {
       selectedLocation.length === 0 || selectedLocation.includes(job.location);
     let matchesSearchTitle = (job) =>
       searchFilter.jobTitle === "" ||
-      (job.jobTitle &&
-        job.jobTitle
+      (job.title &&
+        job.title
           .toLowerCase()
           .trim()
           .includes(searchFilter.jobTitle.toLowerCase().trim()));
 
     let matchesSearchLocation = (job) =>
       searchFilter.location === "" ||
-      job.location.toLowerCase().includes(searchFilter.location.toLowerCase());
+      job.location.toLowerCase().trim().includes(searchFilter.location.toLowerCase().trim());
 
     let filtered = jobList
       .reverse()
@@ -55,6 +55,7 @@ const JobListing = () => {
     setFilteredJobList(filtered);
     setCurrentPage(1);
   }, [selectedCategory, selectedLocation, searchFilter, jobList]);
+  
   return (
     <div className="container mx-auto flex flex-col lg:flex-row xl:px-14 px-10 ">
       <div className="w-full lg:w-1/4 p-5 border">
@@ -148,7 +149,9 @@ const JobListing = () => {
       </div>
 
       {/* Job Listings */}
-      <div className="w-full lg:w-3/4 px-4 mt-10 lg:mt-0">
+      {
+        isLoading ? <div className="flex justify-center items-center h-screen"><Loader2 className="size-6 animate-spin text-blue-500" /></div> : (
+        <div className="w-full lg:w-3/4 px-4 mt-10 lg:mt-0">
         <h1 className="text-3xl py-2 font-bold" id="latest-jobs">
           Latest Jobs
         </h1>
@@ -162,7 +165,7 @@ const JobListing = () => {
               <JobCard key={index} job={job} />
             ))}
         </div>
-        {filteredJobList.length > 0 && (
+        {filteredJobList.length > 6 && (
           <div className="flex justify-center gap-2 items-center my-10">
             <a
               href="#latest-jobs"
@@ -204,8 +207,9 @@ const JobListing = () => {
               <ChevronRight className="size-6 cursor-pointer text-blue-500 hover:text-blue-700" />
             </a>
           </div>
-        )}
-      </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

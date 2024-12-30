@@ -15,11 +15,13 @@ let ContextAPI = ({ children }) => {
    fetchJobList();
   }, []);
  async function fetchJobList() {
+  setIsLoading(true);
   setJobList(jobListings)
+  setIsLoading(false);
  }
   return (
     <ContextProvider.Provider
-      value={{ searchFilter, setSearchFilter, isSearch, setIsSearch, jobList, setJobList }}
+      value={{ searchFilter, setSearchFilter, isSearch, setIsSearch, jobList, setJobList, isLoading }}
     >
       {children}
     </ContextProvider.Provider>

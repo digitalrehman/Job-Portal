@@ -1,7 +1,9 @@
 import React from "react";
 import { images } from "../assets";
+import { useNavigate } from "react-router-dom";
 
 const JobCard = ({ job }) => {
+  let navigate = useNavigate()
   return (
     <div className="border p-6 shadow rounded hover:shadow-lg transition-all duration-300 transform hover:scale-105">
       <div className="flex justify-between items-center">
@@ -21,10 +23,10 @@ const JobCard = ({ job }) => {
         dangerouslySetInnerHTML={{ __html: job.description.slice(0, 150) }}
       ></p>
       <div className="flex gap-3 items-center text-sm mt-4">
-        <button className="bg-blue-500 text-white px-4 py-2 rounded">
+        <button onClick={() => {navigate(`/applyJob/${job._id}`); scrollTo(0, 0)}} className="bg-blue-500 text-white px-4 py-2 rounded">
           Apply
         </button>
-        <button className=" text-gray-500 border border-gray-500 px-4 py-2 rounded">
+        <button onClick={() => {navigate(`/applyJob/${job._id}`); scrollTo(0, 0)}} className=" text-gray-500 border border-gray-500 px-4 py-2 rounded">
           Learn More
         </button>
       </div>
