@@ -34,7 +34,7 @@ const JobListing = () => {
     let matchesSearchTitle = (job) =>
       searchFilter.jobTitle === "" ||
       (job.title &&
-        job.title
+        job.title.replace(/\s+/g, "")
           .toLowerCase()
           .trim()
           .includes(searchFilter.jobTitle.toLowerCase().trim()));

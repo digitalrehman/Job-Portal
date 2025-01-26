@@ -12,12 +12,10 @@ if (!PUBLISHABLE_KEY) {
 }
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <StrictMode>
       <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
         <ContextAPI>
           <App />
         </ContextAPI>
       </ClerkProvider>
-    </StrictMode>
   </BrowserRouter>
 );

@@ -8,7 +8,7 @@ let ContextAPI = ({ children }) => {
     jobTitle: "",
     location: "",
   });
-  let [isLoading, setIsLoading] = useState(true);
+  let [isLoading, setIsLoading] = useState(false);
   let [isSearch, setIsSearch] = useState(false);  
   let [jobList, setJobList] = useState([]);
   useEffect(() => {
